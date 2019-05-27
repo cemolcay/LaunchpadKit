@@ -50,7 +50,7 @@ public class LaunchpadButton {
 
   /// Returns true if the button is located on top row.
   public var isLiveButton: Bool {
-    return row == 0
+    return row == 8
   }
 
   /// Returns true if the buttons is located on last column.
@@ -60,8 +60,8 @@ public class LaunchpadButton {
 
   /// Returns the MIDI code for the current color/brightness configuration.
   public var colorCode: UInt8 {
-    var red = brightness.rawValue * (color == .red || color == .amber ? 1 : 0)
-    var green = brightness.rawValue * (color == .red || color == .amber ? 1 : 0)
+    var red = brightness.rawValue * (color == .red || color == .amber ? 0 : 1)
+    var green = brightness.rawValue * (color == .red || color == .amber ? 0 : 1)
 
     if color == .yellow && brightness != .off {
       red = 2
@@ -75,7 +75,7 @@ public class LaunchpadButton {
 
   /// Returns the MIDI status code for the color message sending.
   public var colorStatusCode: UInt8 {
-    return isLiveButton ? 176 : 144
+    return isLiveButton ? 144 : 176
   }
 
   /// Initilizes the button with
@@ -91,7 +91,7 @@ public class LaunchpadButton {
     self.color = color
     self.brightness = brightness
     self.isPressed = false
-    self.midiNote = col == 8 ? UInt8(104 + col) : UInt8((row * 16) + col)
+    self.midiNote = row == 8 ? UInt8(104 + col) : UInt8((row * 16) + col)
   }
 }
 
@@ -112,7 +112,7 @@ public class Launchpad {
   ///   - name: MIDI-input name of the Launchpad.
   ///   - port: MIDI port of the Launchpad.
   public init(name: String, port: MIDIUniqueID) {
-    grid = [Int](0..<8).map({ x in [Int](0..<8).map({ y in LaunchpadButton(row: y, col: x) }) }).flatMap({ $0 })
+    grid = [Int](0..<9).map({ x in [Int](0..<9).map({ y in LaunchpadButton(row: y, col: x) }) }).flatMap({ $0 })
     self.name = name
     self.port = port
     isConnected = false
@@ -227,6 +227,7 @@ public class LaunchpadManager: AKMIDIListener {
   /// Initilizes the manager.
   private init() {
     midi.addListener(self)
+    initializeLaunchpads()
   }
 
   // MARK: Launchpad Color Setting
@@ -252,31 +253,10 @@ public class LaunchpadManager: AKMIDIListener {
     midi.sendMessage(midiEvent)
   }
 
-  // MARK: Launchpad Connection
+  // MARK: Launchpad Setup
 
-  /// Connects a Launchpad.
-  ///
-  /// - Parameter launchpad: Connecting Launchpad.
-  public func connect(launchpad: Launchpad) {
-    midi.openInput(uid: launchpad.port)
-    midi.openOutput(uid: launchpad.port)
-    launchpad.isConnected = true
-    delegate?.launchpadManager(self, didConnect: launchpad)
-  }
-
-  /// Disconnects from a Launchpad.
-  ///
-  /// - Parameter launchpad: Disconnecting Launchpad.
-  public func disconnect(launchpad: Launchpad) {
-    midi.closeInput(uid: launchpad.port)
-    midi.closeOutput(uid: launchpad.port)
-    launchpad.isConnected = false
-    delegate?.launchpadManager(self, didDisconnect: launchpad)
-  }
-
-  // MARK: AKMIDIListener
-
-  public func receivedMIDISetupChange() {
+  /// Initializes the Launchpads/
+  public func initializeLaunchpads() {
     let detectedLaunchpads = midi.inputUIDs
       .filter({ midi.inputName(for: $0)?.contains("Launchpad") == true })
       .map({ Launchpad(name: midi.inputName(for: $0) ?? "Launchpad", port: $0) })
@@ -301,6 +281,32 @@ public class LaunchpadManager: AKMIDIListener {
     delegate?.launchpadManagerSetupDidChange(self)
   }
 
+  /// Connects a Launchpad.
+  ///
+  /// - Parameter launchpad: Connecting Launchpad.
+  public func connect(launchpad: Launchpad) {
+    midi.openInput(uid: launchpad.port)
+    midi.openOutput(uid: launchpad.port)
+    launchpad.isConnected = true
+    delegate?.launchpadManager(self, didConnect: launchpad)
+  }
+
+  /// Disconnects from a Launchpad.
+  ///
+  /// - Parameter launchpad: Disconnecting Launchpad.
+  public func disconnect(launchpad: Launchpad) {
+    midi.closeInput(uid: launchpad.port)
+    midi.closeOutput(uid: launchpad.port)
+    launchpad.isConnected = false
+    delegate?.launchpadManager(self, didDisconnect: launchpad)
+  }
+
+  // MARK: AKMIDIListener
+
+  public func receivedMIDISetupChange() {
+    initializeLaunchpads()
+  }
+
   public func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel, portID: MIDIUniqueID) {
     guard let launchpad = launchpads.first(where: { $0.port == portID }),
       let button = launchpad[midiNote: noteNumber]
@@ -320,5 +326,18 @@ public class LaunchpadManager: AKMIDIListener {
       else { return }
     button.isPressed = false
     delegate?.launchpadManager(self, launchpad: launchpad, didUnpress: button)
+  }
+
+  public func receivedMIDIController(_ controller: MIDIByte, value: MIDIByte, channel: MIDIChannel, portID: MIDIUniqueID) {
+    guard let launchpad = launchpads.first(where: { $0.port == portID }),
+      let button = launchpad[midiNote: controller]
+      else { return }
+    if value > 0 {
+      button.isPressed = true
+      delegate?.launchpadManager(self, launchpad: launchpad, didPress: button)
+    } else {
+      button.isPressed = false
+      delegate?.launchpadManager(self, launchpad: launchpad, didUnpress: button)
+    }
   }
 }

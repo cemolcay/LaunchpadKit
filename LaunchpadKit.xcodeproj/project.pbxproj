@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5395FEA6229BE70700976306 /* LaunchpadKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5395FEA4229BE70700976306 /* LaunchpadKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2974F526ADEACF685ED1AD90 /* Pods_LaunchpadKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC6EC2CF2832BB4FF1D6F9D /* Pods_LaunchpadKit_Mac.framework */; };
+		5395FEC7229BE78A00976306 /* LaunchpadKit_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5395FEBE229BE76E00976306 /* LaunchpadKit_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5395FEC8229BE79100976306 /* LaunchpadKit_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 5395FEBB229BE76E00976306 /* LaunchpadKit_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5395FECA229BE7DE00976306 /* LaunchpadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */; };
+		5395FECB229BE7DE00976306 /* LaunchpadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */; };
+		5395FED2229C1A0200976306 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5395FED0229C19EE00976306 /* AudioKit.framework */; };
+		5395FED3229C1A0C00976306 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5395FECE229C19EE00976306 /* AudioKit.framework */; };
+		8C6F7039B1CA36694C1392FE /* Pods_LaunchpadKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F54109A92480FB9DC1D5AB7 /* Pods_LaunchpadKit_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090C27618ABBC92B264ECC3C /* Pods-LaunchpadKit_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchpadKit_iOS.debug.xcconfig"; path = "Target Support Files/Pods-LaunchpadKit_iOS/Pods-LaunchpadKit_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		0F54109A92480FB9DC1D5AB7 /* Pods_LaunchpadKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaunchpadKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2195E2CFD1E9DAF0818536C7 /* Pods-LaunchpadKit_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchpadKit_iOS.release.xcconfig"; path = "Target Support Files/Pods-LaunchpadKit_iOS/Pods-LaunchpadKit_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5395FEA1229BE70700976306 /* LaunchpadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchpadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5395FEA4229BE70700976306 /* LaunchpadKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchpadKit.h; sourceTree = "<group>"; };
-		5395FEA5229BE70700976306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5395FEB1229BE72900976306 /* LaunchpadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchpadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5395FEBA229BE76E00976306 /* Info_Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_Mac.plist; sourceTree = "<group>"; };
+		5395FEBB229BE76E00976306 /* LaunchpadKit_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchpadKit_Mac.h; sourceTree = "<group>"; };
+		5395FEBD229BE76E00976306 /* Info_iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_iOS.plist; sourceTree = "<group>"; };
+		5395FEBE229BE76E00976306 /* LaunchpadKit_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchpadKit_iOS.h; sourceTree = "<group>"; };
+		5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadManager.swift; sourceTree = "<group>"; };
+		5395FECE229C19EE00976306 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		5395FED0229C19EE00976306 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		75108A7FB5B8D747DFF25E1B /* Pods-LaunchpadKit_Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchpadKit_Mac.release.xcconfig"; path = "Target Support Files/Pods-LaunchpadKit_Mac/Pods-LaunchpadKit_Mac.release.xcconfig"; sourceTree = "<group>"; };
+		ACC6EC2CF2832BB4FF1D6F9D /* Pods_LaunchpadKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaunchpadKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1835A0F43160AFD25FEB01F /* Pods-LaunchpadKit_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchpadKit_Mac.debug.xcconfig"; path = "Target Support Files/Pods-LaunchpadKit_Mac/Pods-LaunchpadKit_Mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,17 +40,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6F7039B1CA36694C1392FE /* Pods_LaunchpadKit_iOS.framework in Frameworks */,
+				5395FED3229C1A0C00976306 /* AudioKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5395FEAE229BE72900976306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5395FED2229C1A0200976306 /* AudioKit.framework in Frameworks */,
+				2974F526ADEACF685ED1AD90 /* Pods_LaunchpadKit_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D63E8B395505CD1DA820051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5395FECC229C19EE00976306 /* AudioKit */,
+				ACC6EC2CF2832BB4FF1D6F9D /* Pods_LaunchpadKit_Mac.framework */,
+				0F54109A92480FB9DC1D5AB7 /* Pods_LaunchpadKit_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45F9E5BAF0E61C2F9927189B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1835A0F43160AFD25FEB01F /* Pods-LaunchpadKit_Mac.debug.xcconfig */,
+				75108A7FB5B8D747DFF25E1B /* Pods-LaunchpadKit_Mac.release.xcconfig */,
+				090C27618ABBC92B264ECC3C /* Pods-LaunchpadKit_iOS.debug.xcconfig */,
+				2195E2CFD1E9DAF0818536C7 /* Pods-LaunchpadKit_iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5395FE97229BE70700976306 = {
 			isa = PBXGroup;
 			children = (
-				5395FEA3229BE70700976306 /* LaunchpadKit */,
+				5395FEB9229BE76E00976306 /* LaunchpadKit */,
 				5395FEA2229BE70700976306 /* Products */,
+				45F9E5BAF0E61C2F9927189B /* Pods */,
+				0D63E8B395505CD1DA820051 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -39,17 +92,54 @@
 			isa = PBXGroup;
 			children = (
 				5395FEA1229BE70700976306 /* LaunchpadKit.framework */,
+				5395FEB1229BE72900976306 /* LaunchpadKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5395FEA3229BE70700976306 /* LaunchpadKit */ = {
+		5395FEB9229BE76E00976306 /* LaunchpadKit */ = {
 			isa = PBXGroup;
 			children = (
-				5395FEA4229BE70700976306 /* LaunchpadKit.h */,
-				5395FEA5229BE70700976306 /* Info.plist */,
+				5395FEBA229BE76E00976306 /* Info_Mac.plist */,
+				5395FEBD229BE76E00976306 /* Info_iOS.plist */,
+				5395FEBB229BE76E00976306 /* LaunchpadKit_Mac.h */,
+				5395FEBE229BE76E00976306 /* LaunchpadKit_iOS.h */,
+				5395FEBC229BE76E00976306 /* Source */,
 			);
 			path = LaunchpadKit;
+			sourceTree = "<group>";
+		};
+		5395FEBC229BE76E00976306 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5395FECC229C19EE00976306 /* AudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				5395FECD229C19EE00976306 /* iOS */,
+				5395FECF229C19EE00976306 /* Mac */,
+			);
+			path = AudioKit;
+			sourceTree = "<group>";
+		};
+		5395FECD229C19EE00976306 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5395FECE229C19EE00976306 /* AudioKit.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		5395FECF229C19EE00976306 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5395FED0229C19EE00976306 /* AudioKit.framework */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,17 +149,26 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5395FEA6229BE70700976306 /* LaunchpadKit.h in Headers */,
+				5395FEC7229BE78A00976306 /* LaunchpadKit_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5395FEAC229BE72900976306 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5395FEC8229BE79100976306 /* LaunchpadKit_Mac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5395FEA0229BE70700976306 /* LaunchpadKit */ = {
+		5395FEA0229BE70700976306 /* LaunchpadKit_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5395FEA9229BE70700976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit" */;
+			buildConfigurationList = 5395FEA9229BE70700976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit_iOS" */;
 			buildPhases = (
+				A36E136977E9A27448F30190 /* [CP] Check Pods Manifest.lock */,
 				5395FE9C229BE70700976306 /* Headers */,
 				5395FE9D229BE70700976306 /* Sources */,
 				5395FE9E229BE70700976306 /* Frameworks */,
@@ -79,9 +178,28 @@
 			);
 			dependencies = (
 			);
-			name = LaunchpadKit;
+			name = LaunchpadKit_iOS;
 			productName = LaunchpadKit;
 			productReference = 5395FEA1229BE70700976306 /* LaunchpadKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5395FEB0229BE72900976306 /* LaunchpadKit_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5395FEB6229BE72900976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit_Mac" */;
+			buildPhases = (
+				E083AB28491771F5221C5FC5 /* [CP] Check Pods Manifest.lock */,
+				5395FEAC229BE72900976306 /* Headers */,
+				5395FEAD229BE72900976306 /* Sources */,
+				5395FEAE229BE72900976306 /* Frameworks */,
+				5395FEAF229BE72900976306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaunchpadKit_Mac;
+			productName = LaunchpadKit_Mac;
+			productReference = 5395FEB1229BE72900976306 /* LaunchpadKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -95,6 +213,11 @@
 				TargetAttributes = {
 					5395FEA0229BE70700976306 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+					5395FEB0229BE72900976306 = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -110,7 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5395FEA0229BE70700976306 /* LaunchpadKit */,
+				5395FEA0229BE70700976306 /* LaunchpadKit_iOS */,
+				5395FEB0229BE72900976306 /* LaunchpadKit_Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -123,13 +247,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5395FEAF229BE72900976306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A36E136977E9A27448F30190 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LaunchpadKit_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E083AB28491771F5221C5FC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LaunchpadKit_Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5395FE9D229BE70700976306 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5395FECA229BE7DE00976306 /* LaunchpadManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5395FEAD229BE72900976306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5395FECB229BE7DE00976306 /* LaunchpadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +447,9 @@
 		};
 		5395FEAA229BE70700976306 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 090C27618ABBC92B264ECC3C /* Pods-LaunchpadKit_iOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -268,16 +457,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LaunchpadKit/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioKit/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/LaunchpadKit/Info_iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.LaunchpadKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = LaunchpadKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,7 +480,9 @@
 		};
 		5395FEAB229BE70700976306 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2195E2CFD1E9DAF0818536C7 /* Pods-LaunchpadKit_iOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -293,18 +490,94 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LaunchpadKit/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioKit/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/LaunchpadKit/Info_iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.LaunchpadKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = LaunchpadKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5395FEB7229BE72900976306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1835A0F43160AFD25FEB01F /* Pods-LaunchpadKit_Mac.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioKit/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/LaunchpadKit/Info_Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.LaunchpadKit-Mac";
+				PRODUCT_NAME = LaunchpadKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5395FEB8229BE72900976306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75108A7FB5B8D747DFF25E1B /* Pods-LaunchpadKit_Mac.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioKit/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/LaunchpadKit/Info_Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.LaunchpadKit-Mac";
+				PRODUCT_NAME = LaunchpadKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -320,11 +593,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5395FEA9229BE70700976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit" */ = {
+		5395FEA9229BE70700976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5395FEAA229BE70700976306 /* Debug */,
 				5395FEAB229BE70700976306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5395FEB6229BE72900976306 /* Build configuration list for PBXNativeTarget "LaunchpadKit_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5395FEB7229BE72900976306 /* Debug */,
+				5395FEB8229BE72900976306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

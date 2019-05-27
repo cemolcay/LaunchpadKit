@@ -8,7 +8,6 @@
 
 import Foundation
 import AudioKit
-import MIDIEventKit
 
 /// Represents a button on Launchpad.
 public class LaunchpadButton {

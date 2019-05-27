@@ -1,6 +1,5 @@
 def shared_pods
   # pod 'AudioKit'
-  pod 'MIDIEventKit'
 end
 
 target 'LaunchpadKit_iOS' do

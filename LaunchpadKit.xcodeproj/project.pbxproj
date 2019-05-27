@@ -10,8 +10,8 @@
 		2974F526ADEACF685ED1AD90 /* Pods_LaunchpadKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC6EC2CF2832BB4FF1D6F9D /* Pods_LaunchpadKit_Mac.framework */; };
 		5395FEC7229BE78A00976306 /* LaunchpadKit_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5395FEBE229BE76E00976306 /* LaunchpadKit_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5395FEC8229BE79100976306 /* LaunchpadKit_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 5395FEBB229BE76E00976306 /* LaunchpadKit_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5395FECA229BE7DE00976306 /* LaunchpadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */; };
-		5395FECB229BE7DE00976306 /* LaunchpadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */; };
+		5395FECA229BE7DE00976306 /* LaunchpadKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadKit.swift */; };
+		5395FECB229BE7DE00976306 /* LaunchpadKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395FEC9229BE7DE00976306 /* LaunchpadKit.swift */; };
 		5395FED2229C1A0200976306 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5395FED0229C19EE00976306 /* AudioKit.framework */; };
 		5395FED3229C1A0C00976306 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5395FECE229C19EE00976306 /* AudioKit.framework */; };
 		8C6F7039B1CA36694C1392FE /* Pods_LaunchpadKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F54109A92480FB9DC1D5AB7 /* Pods_LaunchpadKit_iOS.framework */; };
@@ -27,7 +27,7 @@
 		5395FEBB229BE76E00976306 /* LaunchpadKit_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchpadKit_Mac.h; sourceTree = "<group>"; };
 		5395FEBD229BE76E00976306 /* Info_iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_iOS.plist; sourceTree = "<group>"; };
 		5395FEBE229BE76E00976306 /* LaunchpadKit_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchpadKit_iOS.h; sourceTree = "<group>"; };
-		5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadManager.swift; sourceTree = "<group>"; };
+		5395FEC9229BE7DE00976306 /* LaunchpadKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadKit.swift; sourceTree = "<group>"; };
 		5395FECE229C19EE00976306 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		5395FED0229C19EE00976306 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		75108A7FB5B8D747DFF25E1B /* Pods-LaunchpadKit_Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchpadKit_Mac.release.xcconfig"; path = "Target Support Files/Pods-LaunchpadKit_Mac/Pods-LaunchpadKit_Mac.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		5395FEBC229BE76E00976306 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5395FEC9229BE7DE00976306 /* LaunchpadManager.swift */,
+				5395FEC9229BE7DE00976306 /* LaunchpadKit.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5395FECA229BE7DE00976306 /* LaunchpadManager.swift in Sources */,
+				5395FECA229BE7DE00976306 /* LaunchpadKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5395FECB229BE7DE00976306 /* LaunchpadManager.swift in Sources */,
+				5395FECB229BE7DE00976306 /* LaunchpadKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

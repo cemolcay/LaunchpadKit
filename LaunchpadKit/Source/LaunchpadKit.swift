@@ -60,8 +60,8 @@ public class LaunchpadButton {
 
   /// Returns the MIDI code for the current color/brightness configuration.
   public var colorCode: UInt8 {
-    var red = brightness.rawValue * (color == .red || color == .amber ? 0 : 1)
-    var green = brightness.rawValue * (color == .red || color == .amber ? 0 : 1)
+    var red = brightness.rawValue * (color == .red || color == .amber ? 1 : 0)
+    var green = brightness.rawValue * (color == .red || color == .amber ? 1 : 0)
 
     if color == .yellow && brightness != .off {
       red = 2
@@ -75,7 +75,7 @@ public class LaunchpadButton {
 
   /// Returns the MIDI status code for the color message sending.
   public var colorStatusCode: UInt8 {
-    return isLiveButton ? 144 : 176
+    return isLiveButton ? 176 : 144
   }
 
   /// Initilizes the button with
@@ -85,13 +85,13 @@ public class LaunchpadButton {
   ///   - col: Column index, x-position of the button.
   ///   - color: Color of the button.
   ///   - brightness: Brightness of the button.
-  public init(row: Int, col: Int, color: Color = .green, brightness: Brightness = .off) {
+  public init(row: Int, col: Int, midiNote: UInt8, color: Color = .green, brightness: Brightness = .off) {
     self.row = row
     self.col = col
+    self.midiNote = midiNote
     self.color = color
     self.brightness = brightness
     self.isPressed = false
-    self.midiNote = row == 8 ? UInt8(104 + col) : UInt8((row * 16) + col)
   }
 }
 
@@ -112,10 +112,18 @@ public class Launchpad {
   ///   - name: MIDI-input name of the Launchpad.
   ///   - port: MIDI port of the Launchpad.
   public init(name: String, port: MIDIUniqueID) {
-    grid = [Int](0..<9).map({ x in [Int](0..<9).map({ y in LaunchpadButton(row: y, col: x) }) }).flatMap({ $0 })
+    self.grid = []
     self.name = name
     self.port = port
-    isConnected = false
+    self.isConnected = false
+
+    for x in 0..<9 {
+      for y in 0..<9 {
+        let midiNote = UInt8(y == 0 ? 104 + x : (16 * x) + y - 1)
+        let button = LaunchpadButton(row: y, col: x, midiNote: midiNote)
+        grid.append(button)
+      }
+    }
   }
 
   /// Gets or sets a `LaunchpadButton` on the grid by its x-y position.
@@ -230,29 +238,6 @@ public class LaunchpadManager: AKMIDIListener {
     initializeLaunchpads()
   }
 
-  // MARK: Launchpad Color Setting
-
-  /// Sets a launchpad's button color.
-  ///
-  /// - Parameters:
-  ///   - launchpad: Launchpad object.
-  ///   - x: Column of the button on the grid.
-  ///   - y: Row of the button on the grid.
-  ///   - color: Color of the button.
-  ///   - brightness: Brightness of the button.
-  public func setLaunchpadButtonColor(_ launchpad: Launchpad,
-                                      x: Int,
-                                      y: Int,
-                                      color: LaunchpadButton.Color,
-                                      brightness: LaunchpadButton.Brightness) {
-    guard let button = launchpad[x, y] else { return }
-    button.color = color
-    button.brightness = brightness
-
-    let midiEvent = [button.colorStatusCode, button.midiNote, button.colorCode]
-    midi.sendMessage(midiEvent)
-  }
-
   // MARK: Launchpad Setup
 
   /// Initializes the Launchpads/
@@ -299,6 +284,29 @@ public class LaunchpadManager: AKMIDIListener {
     midi.closeOutput(uid: launchpad.port)
     launchpad.isConnected = false
     delegate?.launchpadManager(self, didDisconnect: launchpad)
+  }
+
+  // MARK: Launchpad Color Setting
+
+  /// Sets a launchpad's button color.
+  ///
+  /// - Parameters:
+  ///   - launchpad: Launchpad object.
+  ///   - col: Column of the button on the grid.
+  ///   - row: Row of the button on the grid.
+  ///   - color: Color of the button.
+  ///   - brightness: Brightness of the button.
+  public func setLaunchpadButtonColor(_ launchpad: Launchpad,
+                                      col: Int,
+                                      row: Int,
+                                      color: LaunchpadButton.Color,
+                                      brightness: LaunchpadButton.Brightness) {
+    guard let button = launchpad[col, row] else { return }
+    button.color = color
+    button.brightness = brightness
+
+    let midiEvent = [button.colorStatusCode, button.midiNote, button.colorCode]
+    midi.sendMessage(midiEvent)
   }
 
   // MARK: AKMIDIListener

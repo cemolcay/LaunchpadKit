@@ -14,6 +14,8 @@ class ViewController: NSViewController, LaunchpadManagerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     LaunchpadManager.shared.delegate = self
+    let launchpad = Launchpad(name: "lp", port: 0)
+    print(launchpad)
   }
 
   // MARK: LaunchpadManagerDelegate
@@ -31,12 +33,12 @@ class ViewController: NSViewController, LaunchpadManagerDelegate {
   }
 
   func launchpadManager(_ launchpadManager: LaunchpadManager, launchpad: Launchpad, didPress button: LaunchpadButton) {
-    print("did press button row: \(button.row) col: \(button.col) isLiveButton: \(button.isLiveButton) isSceneButton: \(button.isSceneButton)")
-    launchpadManager.setLaunchpadButtonColor(launchpad, x: button.col, y: button.row, color: .green, brightness: .min)
+    print("did press button row: \(button.row) col: \(button.col) isLiveButton: \(button.isLiveButton) isSceneButton: \(button.isSceneButton) midiNote: \(button.midiNote)")
+    launchpadManager.setLaunchpadButtonColor(launchpad, col: button.col, row: button.row, color: .green, brightness: .min)
   }
 
   func launchpadManager(_ launchpadManager: LaunchpadManager, launchpad: Launchpad, didUnpress button: LaunchpadButton) {
-    print("did unpress button row: \(button.row) col: \(button.col) isLiveButton: \(button.isLiveButton) isSceneButton: \(button.isSceneButton)")
-    launchpadManager.setLaunchpadButtonColor(launchpad, x: button.col, y: button.row, color: .green, brightness: .off)
+    print("did unpress button row: \(button.row) col: \(button.col) isLiveButton: \(button.isLiveButton) isSceneButton: \(button.isSceneButton) midiNote: \(button.midiNote)")
+    launchpadManager.setLaunchpadButtonColor(launchpad, col: button.col, row: button.row, color: .green, brightness: .off)
   }
 }

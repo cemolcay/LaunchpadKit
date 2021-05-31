@@ -34,7 +34,7 @@ API
   func launchpadManager(_ launchpadManager: LaunchpadManager, launchpad: Launchpad, didUnpress button: LaunchpadButton)
 ```
 
-* Can connect/disconnect launchpads manully
+* Can connect/disconnect launchpads manually
 
 ``` Swift
 public func connect(launchpad: Launchpad)
